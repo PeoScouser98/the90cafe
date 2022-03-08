@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Hiring</title>
+		<!-- favicon -->
+		<link rel="icon" href="./img/logo-cafe/logo-coffee.svg" />
+		<!-- swiper  -->
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/swiper/swiper-bundle.min.css"
+		/>
+		<!-- css -->
+		<link rel="stylesheet" href="./css/main.css" />
+		<link rel="stylesheet" href="./css/myStyle.css" />
+		<link rel="stylesheet" href="./css/customSwiper.css" />
+		<link rel="stylesheet" href="./css/hiring.css" />
+
+		<!-- fontawesome -->
+		<script
+			src="https://kit.fontawesome.com/d2bf59f6fb.js"
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body>
+		<div class="container max-w-full">
+			<header class="bg-secondary">
+				<!-- html code are pushed from js file -->
+			</header>
+				<div
+					class="flex justify-between items-center max-w-7xl mx-auto sm:px-3"
+				>
+					<!-- logo -->
+					<a href="https://the90cafe.cf/">
+						<img
+							src="./img/logo-cafe/logo-cafe-1.png"
+							alt=""
+							class="block"
+							style="max-width: 240px; object-fit: contain"
+						/>
+					</a>
+					<!-- menu on wide screen devices -->
+					<nav class="sm:hidden md:hidden lg:block">
+						<ul class="menu flex justify-end gap-12 text-white text-xl">
+							<li>
+								<a href="https://the90cafe.cf/index.html">Trang Chủ</a>
+							</li>
+							<li>
+								<a href="https://the90cafe.cf/product.html">Menu Đô Uống</a>
+							</li>
+
+							<li>
+								<a href="https://the90cafe.cf/reservation.html">Đặt Bàn</a>
+							</li>
+							<li>
+								<a href="https://the90cafe.cf/hiring.html">Tuyển dụng</a>
+							</li>
+						</ul>
+					</nav>
+					<!-- menu on mobile devices -->
+					<button
+						id="menu-mb-btn"
+						class="sm:block md:block lg:hidden text-white text-2xl"
+					>
+						<i class="fas fa-bars"></i>
+					</button>
+					<nav
+						id="menu-mb"
+						class="fixed z-50 w-full h-full top-0 right-0 translate-x-full bg-neutral-900 duration-300"
+					>
+						<button
+							id="close-menu-mb"
+							class="text-white m-4 text-2xl absolute right-2"
+						>
+							<i class="fas fa-times"></i>
+						</button>
+						<ul
+							class="flex flex-col justify-center gap-14 relative top-1/2 -translate-y-1/2 text-white max-w-fit mx-auto sm:text-2xl md:text-3xl"
+						>
+							<li class="duration-300">
+								<a
+									href="https://the90cafe.cf/"
+									class="flex justify-start items-center gap-5"
+								>
+									<span class="w-8 text-center">
+										<i class="fas fa-home"></i>
+									</span>
+									<span>Trang Chủ</span>
+								</a>
+							</li>
+							<li class="duration-300">
+								<a
+									href="https://the90cafe.cf/product.html"
+									class="flex justify-start items-center gap-5"
+								>
+									<span class="w-8 text-center">
+										<i class="fas fa-clipboard-list"></i>
+									</span>
+									<span>Menu Đô Uống</span>
+								</a>
+							</li>
+							<li class="duration-300">
+								<a
+									href="https://the90cafe.cf/reservation.html"
+									class="flex justify-start items-center gap-5"
+								>
+									<span class="w-8 text-center">
+										<i class="far fa-calendar-alt"></i>
+									</span>
+									<span>Đặt Bàn</span>
+								</a>
+							</li>
+							<li class="duration-300">
+								<a
+									href="https://the90cafe.cf/hiring.html"
+									class="flex justify-start items-center gap-5"
+								>
+									<span class="w-8 text-center">
+										<i class="fas fa-user-tie"></i>
+									</span>
+									<span>Tuyển Dụng</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</header>
+			<main>
+				<!-- banner slide -->
+				<div class="swiper hiring-slide">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<a href="#cv-form">
+								<img src="./img/banner/Hiring banner/1.png" alt="" />
+							</a>
+						</div>
+						<div class="swiper-slide">
+							<a href="#cv-form">
+								<img src="./img/banner/Hiring banner/2.png" alt="" />
+							</a>
+						</div>
+						<div class="swiper-slide">
+							<a href="#cv-form">
+								<img src="./img/banner/Hiring banner/3.png" alt="" />
+							</a>
+						</div>
+					</div>
+					<div
+						class="swiper-button-next text-white font-bold sm:hidden md:block lg:block"
+					></div>
+					<div
+						class="swiper-button-prev text-white font-bold sm:hidden md:block lg:block"
+					></div>
+					<div class="swiper-pagination my-0 bottom-2"></div>
+				</div>
+				<!-- form -->
+				<div class="px-5">
+					<div
+						class="max-w-5xl mx-auto my-14 sm:p-4 md:p-10 lg:p-20 rounded-3xl"
+						style="box-shadow: 2px 2px 20px lightgray"
+					>
+						<h1
+							class="sm:text-2xl md:text-4xl lg:text-5xl text-center mt-9"
+							style="color: var(--primary-1)"
+						>
+							Gửi CV online cho chúng tôi
+						</h1>
+						<form action="" id="cv-form" class="max-w-full">
+							<div
+								class="flex sm:flex-col md:flex-col lg:flex-row justify-center gap-10 max-w-full mx-auto my-9"
+							>
+								<!-- left -->
+								<div
+									class="max-w-lg w-full mx-auto flex flex-col justify-between gap-8"
+								>
+									<div class="">
+										<label class="block" for="">Họ Tên</label>
+										<input class="block" type="text" name="tên" id="name" />
+										<small class="error-message"></small>
+									</div>
+									<div class="">
+										<label class="block" for="">Tuổi</label>
+										<input
+											class="block"
+											type="number"
+											min="18"
+											name="tuổi"
+											id="age"
+										/>
+										<small class="error-message"></small>
+									</div>
+									<div class="">
+										<label class="block" for="">Số điện thoại</label>
+										<input
+											class="block"
+											type="text"
+											name="số điện thoại"
+											id="phone"
+										/>
+										<small class="error-message"></small>
+									</div>
+									<div class="">
+										<label class="block" for="">Email</label>
+										<input class="block" type="email" name="email" id="email" />
+										<small class="error-message"></small>
+									</div>
+									<div class="">
+										<label class="block" for=""
+											>Bạn đang quan tâm vị trí nào</label
+										>
+										<select name="vị trí ứng tuyển" id="position">
+											<option value="">-- Chọn --</option>
+											<option value="Phục Vụ">Phục Vụ</option>
+											<option value="Pha Chế">Pha Chế</option>
+											<option value="Thu Ngân">Thu Ngân</option>
+											<option value="Quản Lý">Quản Lý</option>
+										</select>
+										<small class="error-message"></small>
+									</div>
+								</div>
+								<!-- right -->
+								<div
+									class="flex flex-col justify-between gap-8 max-w-lg w-full mx-auto"
+								>
+									<!-- gender -->
+									<div>
+										<label for="" class="block">Giới Tính</label>
+										<div class="">
+											<div class="flex items-center gap-8">
+												<div class="form-check">
+													<input
+														class="gender form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+														type="radio"
+														name="gender"
+														id="male"
+														checked
+													/>
+													<label
+														class="form-check-label inline-block text-xl"
+														for="male"
+														style="color: var(--primary-1)"
+													>
+														Nam
+													</label>
+												</div>
+												<div class="form-check">
+													<input
+														class="gender form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+														type="radio"
+														name="gender"
+														id="female"
+													/>
+													<label
+														class="form-check-label inline-block text-xl"
+														for="female"
+														style="color: var(--primary-1)"
+													>
+														Nữ
+													</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- upload image -->
+									<div class="">
+										<label for="">Ảnh Cá Nhân</label>
+										<div
+											class="frame relative h-80 max-w-xs mt-5 border rounded-xl"
+										>
+											<label
+												for="file"
+												id="upload-label"
+												class="absolute z-10 top-0 left-0 h-full w-full"
+												>Upload</label
+											>
+											<input
+												type="file"
+												name="file ảnh"
+												id="file"
+												class="upload-btn hidden"
+												onchange="loadFile(event)"
+											/>
+											<img
+												id="photo"
+												src=""
+												alt="your image here"
+												class="hidden w-full h-full rounded-xl object-cover"
+											/>
+											<small
+												class="error-message absolute z-0 top-1/2 -translate-y-1/2 w-full text-center"
+											></small>
+										</div>
+									</div>
+								</div>
+								<!-- submit button -->
+							</div>
+							<button
+								type="submit"
+								id="submit"
+								class="text-white text-2xl block mx-auto px-20 py-4 rounded-xl"
+								style="background-color: var(--primary-1)"
+							>
+								Gửi
+							</button>
+						</form>
+					</div>
+				</div>
+			</main>
+			<footer
+				class="text-white py-14"
+				style="background-color: var(--primary-2)"
+			></footer>
+		</div>
+		<!-- Swiper JS -->
+		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+		<!-- slide swiper -->
+		<script>
+			var swiper = new Swiper(".hiring-slide", {
+				navigation: {
+					nextEl: ".swiper-button-next",
+					prevEl: ".swiper-button-prev",
+				},
+				pagination: {
+					el: ".swiper-pagination",
+					clickable: true,
+				},
+			});
+		</script>
+		<!-- push fixed component into html document -->
+		<script src="./js/fixedComponent.js"></script>
+		<!-- show menu on mobile devices -->
+		<script src="./js/menu.js"></script>
+		<!-- validate form -->
+		<script src="./js/validate.js"></script>
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		<script src="./js/hiring.js"></script>
+	</body>
+</html>

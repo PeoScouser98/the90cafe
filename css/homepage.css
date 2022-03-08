@@ -1,0 +1,74 @@
+/* menu */
+.menu li {
+	transition: ease-in-out 0.3s;
+}
+.menu li:hover {
+	color: var(--primary-1);
+}
+/* swiper slide */
+
+.swiper-slide {
+	background-blend-mode: darken;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+.ingredient-slide {
+	max-width: 100%;
+	height: 400px;
+}
+.coffee-infor::-webkit-scrollbar {
+	display: none;
+}
+.creative-slide .swiper-pagination-bullet {
+	border: 3px solid var(--primary-2);
+}
+/* barista */
+.barista-quality {
+	font-size: 24px;
+	margin: 0 auto;
+}
+.barista-quality::before,
+.barista-quality::after {
+	content: "";
+	display: table-cell;
+	position: relative;
+	top: 30px;
+	margin: 0 auto;
+	border-top: 2px solid #4a4a4a;
+	width: 20%;
+	margin: 0 -20px;
+}
+.barista-quality::before {
+	left: -20px;
+}
+.barista-quality::after {
+	right: -20px;
+}
+
+/* 
+-------------------------------------------------------
+>>>>>>>>>>>>>>>>>>> RESPONSIVE <<<<<<<<<<<<<<<<<<<<<<<
+-------------------------------------------------------
+*/
+@media screen and (min-width: 320px) {
+	.advertise-slider,
+	.view-slider {
+		max-width: 100%;
+		height: 400px;
+		max-height: 100%;
+	}
+	.view-slider {
+		height: 300px;
+	}
+}
+@media screen and (min-width: 600px) and (max-width: 1365px) {
+}
+@media screen and (min-width: 1366px) {
+	.advertise-slider,
+	.view-slider {
+		max-width: 100%;
+		height: 600px;
+		max-height: 100%;
+	}
+}

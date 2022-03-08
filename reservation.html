@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Đặt bàn</title>
+		<!-- favicon -->
+		<link rel="icon" href="./img/logo-cafe/logo-coffee.svg" />
+		<!-- swiper  -->
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/swiper/swiper-bundle.min.css"
+		/>
+		<!-- css -->
+		<link rel="stylesheet" href="./css/main.css" />
+		<link rel="stylesheet" href="./css/myStyle.css" />
+		<link rel="stylesheet" href="./css/customSwiper.css" />
+		<link rel="stylesheet" href="./css/reservation.css" />
+		<!-- fontawesome -->
+		<script
+			src="https://kit.fontawesome.com/d2bf59f6fb.js"
+			crossorigin="anonymous"
+		></script>
+		<style>
+			input,
+			select {
+				display: block;
+				max-width: 100%;
+				width: 100%;
+				border: 1px solid lightgray;
+				padding: 5px 10px;
+				border-radius: 10px;
+			}
+			label {
+				display: block;
+				margin: 10px 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container max-w-full">
+			<header class="bg-secondary">
+				<!-- html code are pushed from js file -->
+			</header>
+			<main>
+				<div class="">
+					<!-- banner -->
+					<div class="w-full">
+						<a href="#reservation-form">
+							<img
+								src="./img/banner/table-reservation.jfif"
+								alt=""
+								class="max-w-full w-full sm:object-contain lg:object-cover"
+								id="banner-img"
+							/>
+						</a>
+					</div>
+					<!-- reservation form -->
+					<div class="w-full px-5">
+						<div
+							class="max-w-4xl mx-auto px-5 py-10 relative sm:-top-24 lg:-top-28 rounded-3xl"
+							style="background-color: #fff; box-shadow: 2px 2px 20px gray"
+						>
+							<h1
+								id="form-title"
+								class="sm:text-2xl md:text-4xl lg:text-5xl text-center my-8"
+								style="color: var(--primary-1)"
+							>
+								<i class="fas fa-calendar-check"></i>
+								<span>Thông Tin Đặt Bàn</span>
+							</h1>
+							<form action="" id="reservation-form">
+								<div
+									class="max-w-xl mx-auto flex flex-col justify-between gap-8"
+								>
+									<div class="form-control">
+										<label for="Name">Họ Tên</label>
+										<input type="text" name="tên" id="name" />
+										<small class="error-message"></small>
+									</div>
+									<div class="form-control">
+										<label for="email">Email</label>
+										<input type="email" name="email" id="email" />
+										<small class="error-message"></small>
+									</div>
+									<div class="form-control">
+										<label for="Phone">Phone</label>
+										<input type="text" id="phone" name="số điện thoại" />
+										<small class="error-message"></small>
+									</div>
+									<!-- coming time -->
+									<div
+										class="form-control grid sm:grid-cols-1 lg:grid-cols-2 gap-8 items-center"
+									>
+										<div>
+											<label for="period-time">Khung giờ đến</label>
+											<select id="period-time" name="khung giò đến">
+												<option value="">Chọn</option>
+												<option value="7-10">7-10</option>
+												<option value="10-13">10-13</option>
+												<option value="13-16">13-16</option>
+												<option value="16-19">16-19</option>
+												<option value="19-22">19-22</option>
+											</select>
+											<small class="error-message"></small>
+										</div>
+										<div>
+											<label for="coming-day">Ngày Đến</label>
+											<input type="date" id="coming-day" name="ngày đến" />
+											<small class="error-message"></small>
+										</div>
+									</div>
+									<div class="form-control">
+										<label for="numOfPeople">Số Người Cùng Bàn</label>
+										<input
+											type="number"
+											name="số người cùng bàn"
+											id="numOfPeople"
+										/>
+										<small class="error-message"></small>
+									</div>
+									<button
+										type="submit"
+										id="submit"
+										class="text-white text-2xl block mx-auto mt-10 px-20 py-4 rounded-xl"
+										style="background-color: var(--primary-1)"
+									>
+										Gửi
+									</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</main>
+			<footer class="text-white py-14" style="background-color: #121212">
+				<div class="max-w-7xl mx-auto px-3">
+					<!-- top -->
+					<div class="logo-footer sm:block md:block lg:table">
+						<img
+							src="./img/logo-cafe/logo-cafe-1.png"
+							alt=""
+							class="mx-auto w-60 object-contain"
+						/>
+					</div>
+					<!-- information -->
+					<div class="my-14 sm:block lg:flex justify-between items-start">
+						<div class="mt-14">
+							<h1 class="sm:text-2xl lg:text-4xl font-bold">Liên Hệ Đặt Bàn</h1>
+							<ul class="mt-5 sm:text-sm md:text-sm lg:text-base">
+								<li class="my-3 flex justify-start gap-3 items-center">
+									<span><i class="fas fa-phone-alt"></i></span>
+									<span><b>Hotline:</b>033 608 9988</span>
+								</li>
+								<li class="my-3 flex justify-start gap-3 items-center">
+									<span><i class="far fa-envelope"></i></span>
+									<span><b>Email:</b>quanghiep03198@gmail.com</span>
+								</li>
+							</ul>
+						</div>
+						<div class="mt-14">
+							<h1 class="sm:text-2xl lg:text-4xl font-bold">Giờ Mở Cửa</h1>
+							<div class="mt-5 sm:text-sm md:text-sm lg:text-base">
+								<span class="block"><b>Thứ 2 đến Thứ 6</b></span>
+								<span class="font-light block mt-2">7:00-22:30</span>
+								<span class="block mt-3"><b>Thứ 2 đến Thứ 6</b></span>
+								<span class="font-light block mt-2">7:00-18:00</span>
+							</div>
+						</div>
+						<div class="mt-14">
+							<h1 class="sm:text-2xl lg:text-4xl font-bold">Về Chúng Tôi</h1>
+							<ul class="my-5">
+								<li class="my-3 flex justify-start gap-3 items-center">
+									<span class="text-xl"
+										><i class="fab fa-facebook-square"></i
+									></span>
+									<span>facebook.com/the90sCafe</span>
+								</li>
+								<li class="my-3 flex justify-start gap-3 items-center">
+									<span class="text-xl"><i class="fab fa-instagram"></i></span>
+									<span>instagram.com/the-90s-cafe/</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- address -->
+					<address class="flex justify-start gap-3">
+						<span><i class="fas fa-map-marker-alt"></i></span>
+						<span>Địa chỉ: 29/20/ Đường An Phú/ An Đồng/ Hải Phòng</span>
+					</address>
+				</div>
+			</footer>
+		</div>
+		<!-- push fixed component into html document -->
+		<script src="./js/fixedComponent.js"></script>
+		<!-- form validate -->
+		<script src="./js/validate.js"></script>
+		<script>
+			const reservationForm = document.querySelector("#reservation-form");
+			const name = document.querySelector("#name");
+			const phone = document.querySelector("#phone");
+			const email = document.querySelector("#email");
+			const periodTime = document.querySelector("#period-time");
+			const comingDay = document.querySelector("#coming-day");
+			const numOfPeople = document.querySelector("#numOfPeople");
+			const inputArr = [name, phone, email, periodTime, comingDay, numOfPeople];
+			isRequired(inputArr);
+			isPhoneNumber(phone);
+			reservationForm.onsubmit = (event) => {
+				event.preventDefault();
+				isRequired(inputArr);
+				checkNull(inputArr);
+				isEmail(email);
+				let ckNull = false;
+				for (const input of inputArr) {
+					if (input.value != "") ckNull = true;
+				}
+				if (ckNull == true)
+					alert(
+						"Cảm ơn bạn đã đặt bàn tại cửa hàng của chúng tôi!\nChúng tôi sẽ liên lạc vói bạn sớm nhất có thể"
+					);
+			};
+		</script>
+	</body>
+</html>

@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+	--primary: #ffa800;
+	--secondary: #121212;
+	--error: rgba(255, 8, 0, 0.767);
+	--success: rgba(105, 224, 155, 0.842);
+}

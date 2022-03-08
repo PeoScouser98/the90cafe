@@ -1,0 +1,22 @@
+input,
+select {
+	outline: none;
+}
+
+/* 
+-------------------------------------------------------
+>>>>>>>>>>>>>>>>>>> RESPONSIVE <<<<<<<<<<<<<<<<<<<<<<<
+-------------------------------------------------------
+*/
+@media screen and (min-width: 320px) {
+	#banner-img {
+		height: auto;
+	}
+}
+@media screen and (min-width: 600px) and (max-width: 1365px) {
+}
+@media screen and (min-width: 1366px) {
+	#banner-img {
+		height: 700px;
+	}
+}

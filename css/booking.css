@@ -1,0 +1,122 @@
+#sale-banner {
+	max-width: 500px;
+	width: 100%;
+	display: block;
+	margin: auto;
+	border-radius: 20px;
+	box-shadow: 0 0 10px gray;
+}
+
+#customer-infor input,
+#customer-infor select {
+	border: 1px solid lightgray;
+	padding: 5px 10px;
+	border-radius: 10px;
+	outline: none;
+	height: 35px;
+	width: 100%;
+	width: -webkit-fill-available;
+}
+#customer-infor input:focus,
+#customer-infor select:focus {
+	border: 3px solid var(--primary-1);
+}
+
+#customer-infor label {
+	text-align: left;
+	width: 200px;
+	font-size: medium;
+}
+.error-message {
+	display: block;
+	font-size: 16px;
+	font-weight: 500;
+}
+/* ---------------- cart list------------------ */
+.cartList-container {
+	box-shadow: 0 0 10px gray;
+	border-radius: 10px;
+	/* text-align: center; */
+	/* max-width: 1024px; */
+	margin: 50px auto;
+}
+.product-infor {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	align-items: center;
+	width: 100%;
+}
+
+.product-list:hover {
+	transition-duration: 0.3s;
+	overflow-y: scroll;
+}
+.product-list::-webkit-scrollbar {
+	width: 5px;
+}
+.product-list::-webkit-scrollbar-track {
+	background: var(--primary-2);
+	border-radius: 12px;
+}
+
+.product-list::-webkit-scrollbar-thumb {
+	background: var(--primary-1);
+	border-radius: 12px;
+}
+
+.product {
+	display: grid;
+	align-items: center;
+	grid-gap: 5px;
+	vertical-align: middle;
+	margin: 20px 0;
+}
+
+.quantity {
+	padding: 5px;
+	width: 50px;
+}
+
+.remove-btn {
+	background: red;
+	color: white;
+	border-radius: 5px;
+}
+.backTo-store:hover {
+	color: var(--primary-1);
+}
+.scrollable {
+	overflow-y: hidden;
+}
+/* cartlist */
+/* 
+
+-------------------------------------------------------
+>>>>>>>>>>>>>>>>>>> RESPONSIVE <<<<<<<<<<<<<<<<<<<<<<<
+-------------------------------------------------------
+*/
+@media screen and (min-width: 320px) {
+	.product {
+		grid-template-columns: 1fr;
+	}
+
+	.remove-btn {
+		padding: 5px 10px;
+	}
+}
+@media screen and (min-width: 600px) and (max-width: 1365px) {
+	.product {
+		grid-template-columns: 1fr;
+	}
+	.remove-btn {
+		padding: 10px 15px;
+	}
+}
+@media screen and (min-width: 1366px) {
+	.product {
+		grid-template-columns: 1fr 4fr;
+	}
+	.remove-btn {
+		padding: 10px 20px;
+	}
+}
