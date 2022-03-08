@@ -21,17 +21,17 @@ class="flex justify-between items-center max-w-7xl mx-auto sm:px-3"
 <nav class="sm:hidden md:hidden lg:block">
     <ul class="menu flex justify-end gap-12 text-white text-xl">
         <li>
-            <a href="https://the90cafe.cf/index.html">Trang Chủ</a>
+            <a href="https://peoscouser98.github.io/the90cafe/">Trang Chủ</a>
         </li>
         <li>
-            <a href="https://the90cafe.cf/product.html">Menu Đô Uống</a>
+            <a href="https://peoscouser98.github.io/the90cafe/product.html">Menu Đô Uống</a>
         </li>
 
         <li>
-            <a href="https://the90cafe.cf/reservation.html">Đặt Bàn</a>
+            <a href="https://peoscouser98.github.io/the90cafe/reservation.html">Đặt Bàn</a>
         </li>
         <li>
-            <a href="https://the90cafe.cf/hiring.html">Tuyển Dụng</a>
+            <a href="https://peoscouser98.github.io/the90cafe/hiring.html">Tuyển Dụng</a>
         </li>
     </ul>
 </nav>
@@ -57,7 +57,7 @@ class="flex justify-between items-center max-w-7xl mx-auto sm:px-3"
     >
         <li class="duration-300">
             <a
-                href="https://the90cafe.cf/"
+                href="https://peoscouser98.github.io/the90cafe/"
                 class="flex justify-start items-center gap-5"
             >
                 <span class="w-8 text-center">
@@ -68,7 +68,7 @@ class="flex justify-between items-center max-w-7xl mx-auto sm:px-3"
         </li>
         <li class="duration-300">
             <a
-                href="https://the90cafe.cf/product.html"
+                href="https://peoscouser98.github.io/the90cafe/product.html"
                 class="flex justify-start items-center gap-5"
             >
                 <span class="w-8 text-center">
@@ -79,7 +79,7 @@ class="flex justify-between items-center max-w-7xl mx-auto sm:px-3"
         </li>
         <li class="duration-300">
             <a
-                href="https://the90cafe.cf/reservation.html"
+                href="https://peoscouser98.github.io/the90cafe/reservation.html"
                 class="flex justify-start items-center gap-5"
             >
                 <span class="w-8 text-center">
@@ -90,7 +90,7 @@ class="flex justify-between items-center max-w-7xl mx-auto sm:px-3"
         </li>
         <li class="duration-300">
             <a
-                href="https://the90cafe.cf/hiring.html"
+                href="https://peoscouser98.github.io/the90cafe/hiring.html"
                 class="flex justify-start items-center gap-5"
             >
                 <span class="w-8 text-center">
