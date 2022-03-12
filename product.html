@@ -55,7 +55,7 @@
 								</h1>
 								<a
 									class="text-xl border px-8 py-2 rounded-md"
-									href="https://peoscouser98.github.io/the90cafe/reservation.html"
+									href="https://the90cafe.cf/reservation.html"
 									>Đặt bàn ngay</a
 								>
 							</div>
@@ -76,7 +76,7 @@
 								</h1>
 								<a
 									class="text-xl border px-8 py-2 rounded-md"
-									href="https://peoscouser98.github.io/the90cafe/product.html"
+									href="https://the90cafe.cf/product.html"
 									>Đặt mua ngay</a
 								>
 							</div>
@@ -96,7 +96,7 @@
 								</h1>
 								<a
 									class="text-xl border px-8 py-2 rounded-md"
-									href="https://peoscouser98.github.io/the90cafe/hiring.html"
+									href="https://the90cafe.cf/hiring.html"
 									>Join us now</a
 								>
 							</div>
@@ -225,7 +225,7 @@
 							style="position: -webkit-sticky"
 						>
 							<div>
-								<a href="https://peoscouser98.github.io/the90cafe/booking.html">
+								<a href="https://the90cafe.cf/booking.html">
 									<i class="fas fa-shopping-cart text-4xl text-primary"></i>
 								</a>
 							</div>
@@ -287,46 +287,62 @@
 					>
 						<div
 							id="product-modal"
-							class="relative top-1/2 -translate-y-1/2 max-w-1/2 m-auto h-auto rounded-2xl p-5 flex flex-col justify-between gap-5 bg-white"
+							class="relative top-1/2 -translate-y-1/2 max-w-5xl m-auto rounded-2xl p-5 bg-white"
+							style="height: min-content"
 						>
 							<span
-								class="close absolute top-0 right-0 text-neutral-800 text-4xl font-bold"
+								class="close absolute top-0 right-0 text-neutral-800 text-4xl font-bold duration-300"
 								>&times;</span
 							>
-							<img alt="" class="w-full" />
-							<div class="flex justify-between items-center">
-								<span>Sản phẩm</span>
-								<span class="product-name"></span>
-							</div>
-							<div class="flex justify-between gap-5 items-center">
-								<label for="quantity">Số lượng</label>
-								<input
-									type="number"
-									name=""
-									id="quantity"
-									value="1"
-									min="1"
-									class="px-3 py-1"
-									style="width: 75px"
-								/>
-							</div>
-							<div class="flex justify-between items-center">
-								<span>Đơn Giá</span>
-								<span class="unit-price" style="color: var(--primary-1)"></span>
-							</div>
-							<div class="flex justify-between items-center">
-								<span>Thành tiền</span>
-								<span class="totalAmount" style="color: var(--primary-1)"
-									>0</span
-								>
-							</div>
-							<button
-								id="addToCart-btn"
-								class="w-full p-8 rounded-xl text-white text-xl"
-								style="background-color: var(--primary-1); padding: 20px 10px"
+							<div
+								class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 items-center gap-10"
 							>
-								Thêm vào giỏ hàng
-							</button>
+								<div>
+									<img alt="" class="w-full block" />
+								</div>
+								<div class="flex flex-col justify-start gap-5">
+									<div>
+										<span
+											class="product-name font-bold text-2xl text-primary text-left"
+										></span>
+									</div>
+									<div class="flex justify-between gap-5 items-center">
+										<label for="quantity">Số lượng</label>
+										<input
+											type="number"
+											name=""
+											id="quantity"
+											value="1"
+											min="1"
+											class="px-3 py-1"
+											style="width: 75px"
+										/>
+									</div>
+									<div class="flex justify-between items-center">
+										<span>Đơn Giá</span>
+										<span
+											class="unit-price"
+											style="color: var(--primary-1)"
+										></span>
+									</div>
+									<div class="flex justify-between items-center">
+										<span>Thành tiền</span>
+										<span class="totalAmount" style="color: var(--primary-1)"
+											>0</span
+										>
+									</div>
+									<button
+										id="addToCart-btn"
+										class="w-full p-8 rounded-xl text-white text-xl"
+										style="
+											background-color: var(--primary-1);
+											padding: 20px 10px;
+										"
+									>
+										Thêm vào giỏ hàng
+									</button>
+								</div>
+							</div>
 						</div>
 					</div>
 					<!-- add to cart success message -->
