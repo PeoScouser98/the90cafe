@@ -1368,6 +1368,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     display: none;
   }
 
+  .sm\:h-80 {
+    height: 20rem;
+  }
+
   .sm\:w-full {
     width: 100%;
   }
@@ -1464,6 +1468,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     display: none;
   }
 
+  .md\:h-80 {
+    height: 20rem;
+  }
+
   .md\:w-3\/5 {
     width: 60%;
   }
@@ -1550,6 +1558,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .lg\:hidden {
     display: none;
+  }
+
+  .lg\:h-full {
+    height: 100%;
   }
 
   .lg\:w-3\/5 {
