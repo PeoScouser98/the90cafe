@@ -80,7 +80,6 @@ span {
 	display: none;
 }
 #product-modal {
-	max-width: 400px;
 	height: auto;
 	margin: auto;
 	border-radius: 20px;
@@ -92,11 +91,9 @@ span {
 }
 #product-modal img {
 	display: block;
-	height: 300px;
 	margin: auto;
 	border-radius: 10px;
 	object-fit: cover;
-	margin-top: 20px;
 }
 #quantity {
 	padding: 5px 10px;
@@ -127,8 +124,14 @@ span {
 	.product-list img {
 		height: 200px;
 	}
+	#product-modal img {
+		height: 300px;
+	}
 }
 @media screen and (min-width: 600px) and (max-width: 1365px) {
+	#product-modal img {
+		height: 300px;
+	}
 }
 @media screen and (min-width: 1366px) {
 	.advertise-slider {
@@ -138,5 +141,8 @@ span {
 	}
 	.product-list img {
 		height: 300px;
+	}
+	#product-modal img {
+		height: 500px;
 	}
 }
