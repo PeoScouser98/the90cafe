@@ -26,11 +26,10 @@ cvForm.onsubmit = (event) => {
 	const messages = document.querySelectorAll(".error-message");
 	for (const message of messages) {
 		if (message.innerHTML === "") ckNull = true;
-		else ckNull = false;
 	}
 	if (ckNull == true)
 		swal(
-			`Cảm ơn bạn đã gửi CV cho chúng tôi!\nChúng tôi sẽ liên lạc vói bạn sớm nhất có thể`
+			`Cảm ơn bạn đã gửi CV cho chúng tôi!\nChúng tôi sẽ liên lạc với bạn sớm nhất có thể`
 		);
-	if (ckNull == false) swal(`Vui lòng kiểm tra lại thông tin đăng ký !`);
+	else swal(`Vui lòng kiểm tra lại thông tin đăng ký !`);
 };
