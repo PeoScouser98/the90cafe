@@ -14,22 +14,33 @@ const email = document.querySelector("#email");
 const position = document.querySelector("#position");
 const imgFile = document.querySelector("#file");
 const inputArr = [name, age, phone, email, position, imgFile];
-isRequired(inputArr);
-checkLength(name, 5);
-isPhoneNumber(phone);
-isEmail(email);
 cvForm.onsubmit = (event) => {
 	event.preventDefault();
 	checkNull(inputArr);
+	isRequired(inputArr);
+	checkLength(name, 5);
+	isPhoneNumber(phone);
+	isEmail(email);
 	// checkLength(phone, 10);
 	let ckNull = false;
 	const messages = document.querySelectorAll(".error-message");
 	for (const message of messages) {
 		if (message.innerHTML === "") ckNull = true;
+		else ckNull = false;
 	}
-	if (ckNull == true)
-		swal(
-			`Cảm ơn bạn đã gửi CV cho chúng tôi!\nChúng tôi sẽ liên lạc với bạn sớm nhất có thể`
-		);
-	else swal(`Vui lòng kiểm tra lại thông tin đăng ký !`);
+	if (ckNull == true) {
+		swal({
+			title: "Thank you!",
+			text: "Cảm ơn bạn đã gửi CV cho chúng tôi! Chúng tôi sẽ liên hệ lại với bạn !",
+			icon: "success",
+			button: true,
+		});
+	} else {
+		swal({
+			title: "Oops !",
+			text: "Vui lòng kiểm tra lại thông tin đăng ký của bạn !",
+			icon: "error",
+			button: true,
+		});
+	}
 };

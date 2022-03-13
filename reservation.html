@@ -17,6 +17,8 @@
 		<link rel="stylesheet" href="./css/myStyle.css" />
 		<link rel="stylesheet" href="./css/customSwiper.css" />
 		<link rel="stylesheet" href="./css/reservation.css" />
+		<!-- sweat alert -->
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 		<!-- fontawesome -->
 		<script
 			src="https://kit.fontawesome.com/d2bf59f6fb.js"
@@ -205,21 +207,33 @@
 			const comingDay = document.querySelector("#coming-day");
 			const numOfPeople = document.querySelector("#numOfPeople");
 			const inputArr = [name, phone, email, periodTime, comingDay, numOfPeople];
-			isRequired(inputArr);
-			isPhoneNumber(phone);
 			reservationForm.onsubmit = (event) => {
 				event.preventDefault();
 				isRequired(inputArr);
+				isPhoneNumber(phone);
 				checkNull(inputArr);
 				isEmail(email);
 				let ckNull = false;
-				for (const input of inputArr) {
-					if (input.value != "") ckNull = true;
+				const messages = document.querySelectorAll(".error-message");
+				for (const message of messages) {
+					if (message.innerHTML === "") ckNull = true;
+					else ckNull = false;
 				}
-				if (ckNull == true)
-					alert(
-						"Cảm ơn bạn đã đặt bàn tại cửa hàng của chúng tôi!\nChúng tôi sẽ liên lạc vói bạn sớm nhất có thể"
-					);
+				if (ckNull == true) {
+					swal({
+						title: "Thank you!",
+						text: "Cảm ơn bạn đã đặt bàn! Chúng tôi sẽ liên hệ lại với bạn !",
+						icon: "success",
+						button: true,
+					});
+				} else {
+					swal({
+						title: "Oops !",
+						text: "Vui lòng kiểm tra lại thông tin đăng ký của bạn !",
+						icon: "error",
+						button: true,
+					});
+				}
 			};
 		</script>
 	</body>
