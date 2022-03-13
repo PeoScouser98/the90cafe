@@ -24,7 +24,7 @@ class="flex justify-between items-center max-w-7xl mx-auto sm:px-3"
             <a href="https://peoscouser98.github.io/the90cafe/">Trang Chủ</a>
         </li>
         <li>
-            <a href="https://peoscouser98.github.io/the90cafe/product.html">Menu Đô Uống</a>
+            <a href="https://peoscouser98.github.io/the90cafe/product.html">Menu Đồ Uống</a>
         </li>
 
         <li>
@@ -74,7 +74,7 @@ class="flex justify-between items-center max-w-7xl mx-auto sm:px-3"
                 <span class="w-8 text-center">
                     <i class="fas fa-clipboard-list"></i>
                 </span>
-                <span>Menu Đô Uống</span>
+                <span>Menu Đồ Uống</span>
             </a>
         </li>
         <li class="duration-300">
