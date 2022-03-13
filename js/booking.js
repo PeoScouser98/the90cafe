@@ -7,7 +7,7 @@ const renderProduct = (data) => {
 	const output = data
 		.map((item, index) => {
 			item.totalPrice = item.price * item.quantity;
-			console.log(index); //lấy index của sản phẩm
+			// console.log(index);
 			return /*html */ `<div class="product">
 				<div class="font-bold product-name" style="color:var(--primary-1)">${item.name}</div>
 				<div class="product-infor">
@@ -43,7 +43,7 @@ const getTotalAmount = () => {
 	}, 0);
 };
 getTotalAmount();
-const calculateSum = (input) => {
+function calculateSum(input) {
 	const price =
 		input.parentElement.parentElement.querySelector(".price").innerHTML;
 	const quantity = input.value;
@@ -56,7 +56,7 @@ const calculateSum = (input) => {
 	allPrice.push(+totalPrice.innerHTML);
 	console.log(allPrice);
 	getTotalAmount();
-};
+}
 // show empty message
 const showEmpty = () => {
 	if (totalAmount.innerText == 0)
@@ -80,7 +80,7 @@ const removeProduct = (button, index) => {
 	allPrice.splice(allPrice.indexOf(+totalPrice.innerHTML), 1);
 	product.remove(product);
 	getTotalAmount();
-	// remove object from array inside localstorage
+	// remove object inside array from localstorage
 	console.log(index);
 	productInCart.splice(index, 1);
 	localStorage.setItem("productInCart", JSON.stringify(productInCart));
