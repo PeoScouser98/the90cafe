@@ -22,25 +22,27 @@ cvForm.onsubmit = (event) => {
 	isPhoneNumber(phone);
 	isEmail(email);
 	// checkLength(phone, 10);
-	let ckNull = false;
+	let ckNull = 0;
 	const messages = document.querySelectorAll(".error-message");
 	for (const message of messages) {
-		if (message.innerHTML === "") ckNull = true;
-		else ckNull = false;
+		if (message.innerHTML != "") ckNull++;
 	}
-	if (ckNull == true) {
+	if (ckNull == 0) {
 		swal({
 			title: "Thank you!",
 			text: "Cảm ơn bạn đã gửi CV cho chúng tôi! Chúng tôi sẽ liên hệ lại với bạn !",
 			icon: "success",
 			button: true,
+			position: "center",
 		});
-	} else {
+	}
+	if (ckNull != 0) {
 		swal({
 			title: "Oops !",
 			text: "Vui lòng kiểm tra lại thông tin đăng ký của bạn !",
 			icon: "error",
 			button: true,
+			position: "center",
 		});
 	}
 };

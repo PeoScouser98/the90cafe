@@ -213,20 +213,20 @@
 				isPhoneNumber(phone);
 				checkNull(inputArr);
 				isEmail(email);
-				let ckNull = false;
+				let ckNull = 0;
 				const messages = document.querySelectorAll(".error-message");
 				for (const message of messages) {
-					if (message.innerHTML === "") ckNull = true;
-					else ckNull = false;
+					if (message.innerHTML != "") ckNull++;
 				}
-				if (ckNull == true) {
+				if (ckNull == 0) {
 					swal({
 						title: "Thank you!",
 						text: "Cảm ơn bạn đã đặt bàn! Chúng tôi sẽ liên hệ lại với bạn !",
 						icon: "success",
 						button: true,
 					});
-				} else {
+				}
+				if (ckNull != 0) {
 					swal({
 						title: "Oops !",
 						text: "Vui lòng kiểm tra lại thông tin đăng ký của bạn !",
