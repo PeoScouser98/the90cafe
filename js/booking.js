@@ -64,7 +64,7 @@ const showEmpty = () => {
 			<p class="text-center font-bold" style="font-size:80px; color:red"><i class="bi bi-cart-x"></i></p>
 			<p class="text-center relative">
 				<a
-					href="https://the90cafe.cf/product.html"
+					href="https://peoscouser98.github.io/the90cafe/product.html"
 					class="text-xl backTo-store"
 					>Quay lại cửa hàng</a
 				>
