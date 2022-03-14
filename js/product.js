@@ -230,9 +230,6 @@ for (const item of addToCart_hover) {
 				timer: 1000,
 				position: "center",
 			});
-			// if (totalAmount.innerText != 0) {
-			// 	successMessage.style.display = "block";
-			// }
 			productInCart.push({
 				id: index,
 				name: productName_modal.innerText,
@@ -257,17 +254,8 @@ closeModal.onclick = () => {
 	document.body.classList.toggle("scrollable");
 	productModal.style.display = "none";
 };
-/**
- *
- * HIDE MESSAGE
- *
- *  */
-ok.onclick = () => {
-	document.body.classList.toggle("scrollable");
-	productModal.style.display = "none";
-	successMessage.style.display = "none";
-};
 window.onload = () => {
 	productInCart = JSON.parse(localStorage.getItem("productInCart"));
-	selectedQuantity = productInCart.length;
+	selectedQuantity.innerHTML = productInCart.length;
+	console.log(productInCart);
 };
