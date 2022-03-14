@@ -1,5 +1,5 @@
 // get product list from localstorage
-let productInCart = JSON.parse(localStorage.getItem("productInCart"));
+const productInCart = JSON.parse(localStorage.getItem("productInCart"));
 // render product array to html document
 const productList = document.querySelector("#product-list");
 const renderProduct = (data) => {
@@ -73,19 +73,18 @@ const showEmpty = () => {
 showEmpty();
 // removing item form cart function
 const removeProduct = (button, index) => {
-	// remove product from cart list
 	const product = button.parentElement.parentElement.parentElement;
 	const totalPrice = product.querySelector(".total-price");
 	allPrice.splice(allPrice.indexOf(+totalPrice.innerHTML), 1);
 	product.remove(product);
 	getTotalAmount();
 	// remove object inside array from localstorage
-	productInCart.splice(index, 1);
+	const filteredElement = productInCart.find((item) => item.id == index);
+	console.log(filteredElement);
+	productInCart.splice(productInCart.indexOf(filteredElement), 1);
+	// console.log(productInCart);
 	localStorage.setItem("productInCart", JSON.stringify(productInCart));
-	if (productInCart.length === 0) {
-		showEmpty();
-		localStorage.clear();
-	}
+	showEmpty();
 };
 // check booking validate
 const name = document.querySelector("#name");
@@ -113,7 +112,6 @@ submitButton.onclick = () => {
 			text: "Cảm ơn bạn đã đã đặt sản phẩm của chúng tôi !",
 			icon: "success",
 			button: true,
-
 			position: "center",
 		});
 	} else {
@@ -122,7 +120,6 @@ submitButton.onclick = () => {
 			text: "Vui lòng kiểm tra lại thông tin mua hàng của bạn !",
 			icon: "error",
 			button: true,
-			confirmButtonColor: "orange",
 			position: "center",
 		});
 	}

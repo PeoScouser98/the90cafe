@@ -180,6 +180,7 @@ const ok = document.querySelector("#ok");
  * product modal
  */
 let productInCart = [];
+let index = 0;
 for (const item of addToCart_hover) {
 	item.onclick = () => {
 		/**
@@ -233,11 +234,13 @@ for (const item of addToCart_hover) {
 			// 	successMessage.style.display = "block";
 			// }
 			productInCart.push({
+				id: index,
 				name: productName_modal.innerText,
 				price: modalPrice.innerText,
 				quantity: quantity.value,
 				totalPrice: totalAmount.innerText,
 			});
+			index++;
 			selectedQuantity.innerHTML = productInCart.length;
 			localStorage.setItem("productInCart", JSON.stringify(productInCart));
 		};
@@ -266,6 +269,5 @@ ok.onclick = () => {
 };
 window.onload = () => {
 	productInCart = JSON.parse(localStorage.getItem("productInCart"));
-	console.log(productInCart);
-	selectedQuantity.innerHTML = productInCart.length;
+	selectedQuantity = productInCart.length;
 };
