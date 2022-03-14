@@ -1,6 +1,5 @@
 // get product list from localstorage
-const productInCart = JSON.parse(localStorage.getItem("productInCart"));
-console.log(productInCart);
+let productInCart = JSON.parse(localStorage.getItem("productInCart"));
 // render product array to html document
 const productList = document.querySelector("#product-list");
 const renderProduct = (data) => {
@@ -81,17 +80,18 @@ const removeProduct = (button, index) => {
 	product.remove(product);
 	getTotalAmount();
 	// remove object inside array from localstorage
-	console.log(index);
 	productInCart.splice(index, 1);
 	localStorage.setItem("productInCart", JSON.stringify(productInCart));
-	showEmpty();
+	if (productInCart.length === 0) {
+		showEmpty();
+		localStorage.clear();
+	}
 };
 // check booking validate
 const name = document.querySelector("#name");
 const phone = document.querySelector("#phone");
 const detailAddress = document.querySelector("#detail-address");
 const district = document.querySelector("#district");
-const bookingMessage = document.querySelector("#booking-message");
 
 // check validate form when clicking on submit button
 isRequired([name, phone, detailAddress, district]);
@@ -106,20 +106,24 @@ submitButton.onclick = () => {
 		if (message.innerText === "") checkValidate = true;
 	}
 	const totalAmount = document.querySelector("#total-amount");
-	bookingMessage.style.visibility = "visible";
-	const errorMessage = document.querySelector("#error");
-	const successMessage = document.querySelector("#success");
 	if (totalAmount.innerText != 0) checkProduct = true;
 	if (checkValidate === true && checkProduct === true) {
-		successMessage.style.display = "block";
-		errorMessage.style.display = "none";
+		swal({
+			title: "Thank you!",
+			text: "Cảm ơn bạn đã đã đặt sản phẩm của chúng tôi !",
+			icon: "success",
+			button: true,
+
+			position: "center",
+		});
 	} else {
-		successMessage.style.display = "none";
-		errorMessage.style.display = "block";
+		swal({
+			title: "Oops !",
+			text: "Vui lòng kiểm tra lại thông tin mua hàng của bạn !",
+			icon: "error",
+			button: true,
+			confirmButtonColor: "orange",
+			position: "center",
+		});
 	}
-	document.body.classList.toggle("scrollable");
-};
-bookingMessage.onclick = () => {
-	document.body.classList.toggle("scrollable");
-	bookingMessage.style.visibility = "hidden";
 };

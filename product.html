@@ -22,6 +22,8 @@
 		<link rel="stylesheet" href="./css/myStyle.css" />
 		<link rel="stylesheet" href="./css/customSwiper.css" />
 		<link rel="stylesheet" href="./css/product.css" />
+		<!-- sweat alert -->
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 		<!-- fontawesome -->
 		<script
 			src="https://kit.fontawesome.com/d2bf59f6fb.js"
@@ -332,13 +334,16 @@
 									</div>
 									<button
 										id="addToCart-btn"
-										class="w-full p-8 rounded-xl text-white text-xl"
+										class="w-full p-8 rounded-xl text-white text-xl flex justify-center gap-5 items-center"
 										style="
 											background-color: var(--primary-1);
 											padding: 20px 10px;
 										"
 									>
-										Thêm vào giỏ hàng
+										<span class="text-3xl"
+											><i class="fas fa-cart-plus"></i
+										></span>
+										<span> Thêm vào giỏ hàng </span>
 									</button>
 								</div>
 							</div>

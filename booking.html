@@ -22,6 +22,8 @@
 		<link rel="stylesheet" href="./css/myStyle.css" />
 		<link rel="stylesheet" href="./css/customSwiper.css" />
 		<link rel="stylesheet" href="./css/booking.css" />
+		<!-- sweat alert -->
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 		<!-- fontawesome -->
 		<script
 			src="https://kit.fontawesome.com/d2bf59f6fb.js"
@@ -118,8 +120,8 @@
 									</div>
 									<!-- form control -->
 									<div class="form-control">
-										<label for="">Ghi chú</label>
-										<input type="text" id="note" />
+										<label for="">Mã giảm giá</label>
+										<input type="text" id="saleOff-code" />
 									</div>
 								</div>
 							</form>
@@ -175,28 +177,6 @@
 				>
 					Đặt hàng
 				</button>
-				<div
-					class="fixed w-full h-full top-0 left-0 flex justify-center items-center invisible"
-					id="booking-message"
-					style="background-color: rgb(0, 0, 0, 0.5)"
-				>
-					<div
-						class="max-w-3xl h-60 px-10 rounded-xl shadow-gray-400 bg-white flex justify-center items-center text-2xl"
-						id="message-box"
-						style="box-shadow: 0px 0px 10px gray"
-					>
-						<!-- booking successfully -->
-						<div class="text-center hidden" id="success">
-							<i class="fas far fa-check-circle text-green-500 text-8xl"></i>
-							<span class="block mt-6">Cảm ơn bạn đã đặt hàng !</span>
-						</div>
-						<!-- booking fail -->
-						<div class="text-center hidden" id="error">
-							<i class="fas fa-times-circle text-8xl text-red-600"></i>
-							<span class="block mt-6">Đặt hàng không thành công !</span>
-						</div>
-					</div>
-				</div>
 			</main>
 			<!-- footer -->
 			<footer

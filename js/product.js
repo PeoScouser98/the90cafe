@@ -172,15 +172,14 @@ const productModal = document.querySelector(".modal");
 const addToCart_hover = document.querySelectorAll(".addToCart-hover");
 const quantity = document.querySelector("#quantity");
 const addToCart_button = document.querySelector("#addToCart-btn");
-const successMessage = document.querySelector(".success-message");
+// const successMessage = document.querySelector(".success-message");
 const selectedQuantity = document.querySelector("#selected-quantity");
 const totalAmount = document.querySelector(".totalAmount");
 const ok = document.querySelector("#ok");
 /**
  * product modal
  */
-const productInCart = [];
-localStorage.setItem("productInCart", JSON.stringify(productInCart));
+let productInCart = [];
 for (const item of addToCart_hover) {
 	item.onclick = () => {
 		/**
@@ -220,12 +219,19 @@ for (const item of addToCart_hover) {
 		 * */
 		addToCart_button.onclick = () => {
 			selectedQuantity.parentElement.style.visibility = "visible";
-			// count++;
+
 			// show quantity of chosen product
 			// show success message
-			if (totalAmount.innerText != 0) {
-				successMessage.style.display = "block";
-			}
+			swal({
+				title: "Đặt hàng thành công!",
+				icon: "success",
+				button: false,
+				timer: 1000,
+				position: "center",
+			});
+			// if (totalAmount.innerText != 0) {
+			// 	successMessage.style.display = "block";
+			// }
 			productInCart.push({
 				name: productName_modal.innerText,
 				price: modalPrice.innerText,
@@ -237,9 +243,7 @@ for (const item of addToCart_hover) {
 		};
 	};
 }
-window.onload = () => {
-	console.log(localStorage.getItem("productInCart"));
-};
+
 /**
  *
  * SHOW MODAL
@@ -259,4 +263,9 @@ ok.onclick = () => {
 	document.body.classList.toggle("scrollable");
 	productModal.style.display = "none";
 	successMessage.style.display = "none";
+};
+window.onload = () => {
+	productInCart = JSON.parse(localStorage.getItem("productInCart"));
+	console.log(productInCart);
+	selectedQuantity.innerHTML = productInCart.length;
 };
