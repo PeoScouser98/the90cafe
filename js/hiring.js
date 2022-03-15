@@ -32,8 +32,8 @@ cvForm.onsubmit = (event) => {
 			title: "Thank you!",
 			text: "Cảm ơn bạn đã gửi CV cho chúng tôi! Chúng tôi sẽ liên hệ lại với bạn !",
 			icon: "success",
-			button: true,
-			position: "center",
+			button: false,
+			timer: 1500,
 		});
 	}
 	if (ckNull != 0) {
@@ -41,8 +41,8 @@ cvForm.onsubmit = (event) => {
 			title: "Oops !",
 			text: "Vui lòng kiểm tra lại thông tin đăng ký của bạn !",
 			icon: "error",
-			button: true,
-			position: "center",
+			button: false,
+			timer: 1500,
 		});
 	}
 };

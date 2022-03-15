@@ -111,16 +111,16 @@ submitButton.onclick = () => {
 			title: "Thank you!",
 			text: "Cảm ơn bạn đã đã đặt sản phẩm của chúng tôi !",
 			icon: "success",
-			button: true,
-			position: "center",
+			button: false,
+			timer: 1500,
 		});
 	} else {
 		swal({
 			title: "Oops !",
 			text: "Vui lòng kiểm tra lại thông tin mua hàng của bạn !",
 			icon: "error",
-			button: true,
-			position: "center",
+			button: false,
+			timer: 1500,
 		});
 	}
 };
