@@ -129,26 +129,34 @@ const Juices = [
 		price: 19000,
 	},
 ];
+
 // RENDER PRODUCT TO HTML DOCUMENT
-const addProduct = (data, productID) => {
+const addProduct = (data, category) => {
 	const products = data
 		.map((item) => {
-			return /*html*/ `<div>
-       <div class="relative">
-           <img src=${item.imgSrc} alt=""/>
-           <div class="addToCart-hover absolute z-10 top-0 left-0 w-full h-full">
-               <span class="relative top-1/2 text-center -translate-y-1/2 text-white text-6xl font-bold"><i class="bi bi-cart-plus"></i></span>
-           </div>
-       </div>
-       <!-- product name -->
-       <span class="product-name text-left sm:text-base md:text-xl lg:text-2xl text-primary">${item.productName}</span>
-       <!-- price -->
-       <span><span class="price inline-block text-left">${item.price}</span> đ</span>
-
-   </div>`;
+			return /*html */ `<div>
+				<div class="relative">
+					<img src=${item.imgSrc} alt="" />
+					<div class="addToCart-hover absolute z-10 top-0 left-0 w-full h-full">
+						<span
+							class="relative top-1/2 text-center -translate-y-1/2 text-white text-6xl font-bold">
+							<i class="bi bi-cart-plus"></i>
+						</span>
+					</div>
+				</div>
+				<!-- product name -->
+				<span
+					class="product-name text-left sm:text-base md:text-xl lg:text-2xl text-primary">
+					${item.productName}
+				</span>
+				<!-- price -->
+				<span>
+					<span class="price inline-block text-left">${item.price}</span>đ
+				</span>
+			</div>`;
 		})
 		.join("");
-	const productList = document.querySelector(`#${productID}`);
+	const productList = $(`#${category}`);
 	productList.innerHTML = products;
 };
 addProduct(Coffee, "coffee");
@@ -159,7 +167,7 @@ addProduct(Juices, "juices");
 /**
  * show beverage menu on mobile
  */
-const dropdownMenu = document.querySelector("#dropdownMenu");
+const dropdownMenu = $("#dropdownMenu");
 dropdownMenu.addEventListener("mousedown", (event) => {
 	event.preventDefault();
 });
@@ -168,14 +176,14 @@ dropdownMenu.addEventListener("mousedown", (event) => {
  * ***********THÊM SẢN PHẨM TỪ MODAL************
  * **********************************************
  */
-const productModal = document.querySelector(".modal");
-const addToCart_hover = document.querySelectorAll(".addToCart-hover");
-const quantity = document.querySelector("#quantity");
-const addToCart_button = document.querySelector("#addToCart-btn");
-// const successMessage = document.querySelector(".success-message");
-const selectedQuantity = document.querySelector("#selected-quantity");
-const totalAmount = document.querySelector(".totalAmount");
-const ok = document.querySelector("#ok");
+const productModal = $(".modal");
+const addToCart_hover = $$(".addToCart-hover");
+const quantity = $("#quantity");
+const addToCart_button = $("#addToCart-btn");
+// const successMessage = $(".success-message");
+const selectedQuantity = $("#selected-quantity");
+const totalAmount = $(".totalAmount");
+const ok = $("#ok");
 /**
  * product modal
  */
@@ -206,7 +214,7 @@ for (const item of addToCart_hover) {
 		 *  */
 		const productPrice =
 			item.parentElement.parentElement.querySelector(".price").innerText;
-		const modalPrice = document.querySelector(".unit-price");
+		const modalPrice = $(".unit-price");
 		modalPrice.innerText = +productPrice;
 		/**
 		 * calculate total price
@@ -249,13 +257,13 @@ for (const item of addToCart_hover) {
  * SHOW MODAL
  *
  */
-const closeModal = document.querySelector(".close");
+const closeModal = $(".close");
 closeModal.onclick = () => {
 	document.body.classList.toggle("scrollable");
 	productModal.style.display = "none";
 };
-window.onload = () => {
-	productInCart = JSON.parse(localStorage.getItem("productInCart"));
-	selectedQuantity.innerHTML = productInCart.length;
-	console.log(productInCart);
-};
+// window.onload = () => {
+// 	productInCart = JSON.parse(localStorage.getItem("productInCart"));
+// 	selectedQuantity.innerHTML = productInCart.length;
+// 	console.log(productInCart);
+// };

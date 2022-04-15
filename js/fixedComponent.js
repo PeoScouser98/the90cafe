@@ -3,8 +3,10 @@
  *       push fixed component into html document
  * ----------------------------------------------------------
  */
-const header = document.querySelector("header");
-const footer = document.querySelector("footer");
+const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
+const header = $("header");
+const footer = $("footer");
 header.innerHTML = /*html */ `<div
 class="flex justify-between items-center max-w-7xl mx-auto sm:px-3"
 >
@@ -163,13 +165,13 @@ footer.innerHTML = /*html */ `	<div class="max-w-7xl mx-auto px-3">
  * show menu on mobile devices
  * ----------------------------
  * */
-const menuMbButton = document.querySelector("#menu-mb-btn");
-const menuMobile = document.querySelector("#menu-mb");
+const menuMbButton = $("#menu-mb-btn");
+const menuMobile = $("#menu-mb");
 menuMbButton.onclick = function () {
 	menuMobile.style.transform = "translateX(0)";
 	document.body.classList.toggle("scrollable");
 };
-const closeMenuBtn = document.querySelector("#close-menu-mb");
+const closeMenuBtn = $("#close-menu-mb");
 closeMenuBtn.onclick = function () {
 	document.body.classList.toggle("scrollable");
 	menuMobile.style.transform = "translateX(100%)";

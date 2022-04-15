@@ -49,8 +49,8 @@ select:focus {
 #upload-label {
 	opacity: 0;
 	border-radius: 12px;
-	transition: ease-in-out 0.5s;
-	color: #212121;
+	transition: ease-in-out 0.3s;
+	color: #3f3f3f;
 	font-size: x-large;
 	/* Center slide text vertically */
 	display: -webkit-box;
@@ -67,7 +67,7 @@ select:focus {
 	align-items: center;
 }
 #upload-label:hover {
-	background-color: #212121;
+	background-color: #3b3b3b;
 	color: #fff;
 	opacity: 1;
 }

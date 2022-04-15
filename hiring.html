@@ -91,12 +91,12 @@
 								<div
 									class="max-w-lg w-full mx-auto flex flex-col justify-between gap-8"
 								>
-									<div class="">
+									<div class="form-group">
 										<label class="block" for="">Họ Tên</label>
 										<input class="block" type="text" name="tên" id="name" />
 										<small class="error-message"></small>
 									</div>
-									<div class="">
+									<div class="form-group">
 										<label class="block" for="">Tuổi</label>
 										<input
 											class="block"
@@ -107,7 +107,7 @@
 										/>
 										<small class="error-message"></small>
 									</div>
-									<div class="">
+									<div class="form-group">
 										<label class="block" for="">Số điện thoại</label>
 										<input
 											class="block"
@@ -117,12 +117,12 @@
 										/>
 										<small class="error-message"></small>
 									</div>
-									<div class="">
+									<div class="form-group">
 										<label class="block" for="">Email</label>
 										<input class="block" type="email" name="email" id="email" />
 										<small class="error-message"></small>
 									</div>
-									<div class="">
+									<div class="form-group">
 										<label class="block" for=""
 											>Bạn đang quan tâm vị trí nào</label
 										>
@@ -143,44 +143,43 @@
 									<!-- gender -->
 									<div>
 										<label for="" class="block">Giới Tính</label>
-										<div class="">
-											<div class="flex items-center gap-8">
-												<div class="form-check">
-													<input
-														class="gender form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-														type="radio"
-														name="gender"
-														id="male"
-														checked
-													/>
-													<label
-														class="form-check-label inline-block text-xl"
-														for="male"
-														style="color: var(--primary-1)"
-													>
-														Nam
-													</label>
-												</div>
-												<div class="form-check">
-													<input
-														class="gender form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-														type="radio"
-														name="gender"
-														id="female"
-													/>
-													<label
-														class="form-check-label inline-block text-xl"
-														for="female"
-														style="color: var(--primary-1)"
-													>
-														Nữ
-													</label>
-												</div>
+										<div class="form-group flex items-center gap-5">
+											<div>
+												<input
+													class="gender form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+													type="radio"
+													name="gender"
+													id="male"
+													checked
+												/>
+												<label
+													class="form-check-label text-xl"
+													for="male"
+													style="color: var(--primary-1)"
+												>
+													Nam
+												</label>
+											</div>
+											<div>
+												<input
+													class="gender form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+													type="radio"
+													name="gender"
+													id="female"
+												/>
+
+												<label
+													class="form-check-label text-xl"
+													for="female"
+													style="color: var(--primary-1)"
+												>
+													Nữ
+												</label>
 											</div>
 										</div>
 									</div>
 									<!-- upload image -->
-									<div class="">
+									<div class="form-group">
 										<label for="">Ảnh Cá Nhân</label>
 										<div
 											class="frame relative h-80 max-w-xs mt-5 border rounded-xl"

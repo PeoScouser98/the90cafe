@@ -1,7 +1,7 @@
 // get product list from localstorage
 const productInCart = JSON.parse(localStorage.getItem("productInCart"));
 // render product array to html document
-const productList = document.querySelector("#product-list");
+const productList = $("#product-list");
 const renderProduct = (data) => {
 	const output = data
 		.map((item, index) => {
@@ -31,8 +31,8 @@ renderProduct(productInCart);
 
 // get total price
 const allPrice = [];
-const totalAmount = document.querySelector("#total-amount");
-const allTotalPrice = document.querySelectorAll(".total-price");
+const totalAmount = $("#total-amount");
+const allTotalPrice = $$(".total-price");
 for (const totalPrice of allTotalPrice) {
 	allPrice.push(+totalPrice.innerText);
 }
@@ -77,34 +77,34 @@ const removeProduct = (button, index) => {
 	const totalPrice = product.querySelector(".total-price");
 	allPrice.splice(allPrice.indexOf(+totalPrice.innerHTML), 1);
 	product.remove(product);
-	getTotalAmount();
 	// remove object inside array from localstorage
 	const filteredElement = productInCart.find((item) => item.id == index);
 	console.log(filteredElement);
 	productInCart.splice(productInCart.indexOf(filteredElement), 1);
 	// console.log(productInCart);
 	localStorage.setItem("productInCart", JSON.stringify(productInCart));
+	getTotalAmount();
 	showEmpty();
 };
 // check booking validate
-const name = document.querySelector("#name");
-const phone = document.querySelector("#phone");
-const detailAddress = document.querySelector("#detail-address");
-const district = document.querySelector("#district");
+const name = $("#name");
+const phone = $("#phone");
+const detailAddress = $("#detail-address");
+const district = $("#district");
 
 // check validate form when clicking on submit button
 isRequired([name, phone, detailAddress, district]);
 checkLength(phone, 10);
 isPhoneNumber(phone);
-const submitButton = document.querySelector("#booking-submit");
+const submitButton = $("#booking-submit");
 submitButton.onclick = () => {
 	checkNull([name, phone, detailAddress, district]);
-	const allMessage = document.querySelectorAll(".error-message");
+	const allMessage = $$(".error-message");
 	let checkValidate = false;
 	for (const message of allMessage) {
 		if (message.innerText === "") checkValidate = true;
 	}
-	const totalAmount = document.querySelector("#total-amount");
+	const totalAmount = $("#total-amount");
 	if (totalAmount.innerText != 0) checkProduct = true;
 	if (checkValidate === true && checkProduct === true) {
 		swal({

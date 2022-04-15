@@ -1,14 +1,9 @@
-const $ = document.querySelector.bind(document);
-const $$ = document.querySelectorAll.bind(document);
-
 // get name of each field
 const getFieldName = (input) => {
 	return input.name.charAt(0).toUpperCase() + input.name.slice(1).toLowerCase();
 };
 // get input element
-const getElement = (id) => {
-	return document.querySelector(`#${id}`);
-};
+
 // show error message
 const showError = (input, message) => {
 	const errorIcon = /*html */ `<i class="bi bi-x align-center"></i>`;
@@ -70,21 +65,7 @@ const checkLength = (input, minLength) => {
 			  );
 	};
 };
-const checkGender = (inputArray) => {
-	let check = false;
-	for (const input of inputArray) {
-		if (input.checked === true) {
-			check = true;
-			showSuccess(input, "");
-		}
-		if (check == false) {
-			showError(input, "Bạn phải chọn giới tính");
-			input.onchange = () => {
-				if (input.checked === true) showSuccess(input, "");
-			};
-		}
-	}
-};
+
 const isPhoneNumber = (input) => {
 	input.oninput = () => {
 		if (input.value == +input.value && input.value.length == 10)
