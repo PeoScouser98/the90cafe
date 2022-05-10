@@ -15,7 +15,7 @@ const showError = (input, message) => {
 // show success if value of the field is valid
 const showSuccess = (input, message) => {
 	const successMessage = input.parentElement.querySelector(".error-message");
-	successMessage.innerText = message;
+	successMessage.innerHTML = message;
 	input.style.border = "3px solid var(--success)";
 };
 
@@ -24,25 +24,22 @@ const showSuccess = (input, message) => {
  */
 const isRequired = (inputArray) => {
 	inputArray.forEach((input) => {
+		input.value.trim() != ""
+			? showSuccess(input, null)
+			: showError(input, `Bạn chưa nhập ${getFieldName(input)}`);
 		input.oninput = () => {
 			input.value.trim() != ""
-				? showSuccess(input, "")
+				? showSuccess(input, null)
 				: showError(input, `Bạn chưa nhập ${getFieldName(input)}`);
 		};
 	});
 };
-const checkNull = (inputArray) => {
-	for (const input of inputArray) {
-		input.value != ""
-			? showSuccess(input, "")
-			: showError(input, `Bạn chưa nhập ${getFieldName(input)}`);
-	}
-};
+
 const isEmail = (emailInput) => {
 	let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 	emailInput.oninput = () => {
 		regexEmail.test(emailInput.value)
-			? showSuccess(emailInput, "")
+			? showSuccess(emailInput, null)
 			: showError(emailInput, "Email không hợp lệ");
 	};
 };
@@ -50,7 +47,7 @@ const isEmail = (emailInput) => {
 const ckMatchingValue = (input1, input2) => {
 	input1.oninput = () => {
 		input1.value == input2.value
-			? showSuccess(input1, "")
+			? showSuccess(input1, null)
 			: showError(input1, `${getFieldName(input1)} doesn't match !`);
 	};
 };
@@ -58,7 +55,7 @@ const ckMatchingValue = (input1, input2) => {
 const checkLength = (input, minLength) => {
 	input.oninput = () => {
 		input.value.length >= minLength
-			? showSuccess(input, "")
+			? showSuccess(input, null)
 			: showError(
 					input,
 					`${getFieldName(input)} phải có tối thiểu ${minLength} ký tự`
@@ -69,7 +66,7 @@ const checkLength = (input, minLength) => {
 const isPhoneNumber = (input) => {
 	input.oninput = () => {
 		if (input.value == +input.value && input.value.length == 10)
-			showSuccess(input, "");
+			showSuccess(input, null);
 		else showError(input, `${getFieldName(input)} không hợp lệ`);
 		console.log(typeof input.value);
 	};

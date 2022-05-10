@@ -199,22 +199,20 @@
 		<!-- form validate -->
 		<script src="./js/validate.js"></script>
 		<script>
-			const reservationForm = document.querySelector("#reservation-form");
-			const name = document.querySelector("#name");
-			const phone = document.querySelector("#phone");
-			const email = document.querySelector("#email");
-			const periodTime = document.querySelector("#period-time");
-			const comingDay = document.querySelector("#coming-day");
-			const numOfPeople = document.querySelector("#numOfPeople");
+			const reservationForm = $("#reservation-form");
+			const name = $("#name");
+			const phone = $("#phone");
+			const email = $("#email");
+			const periodTime = $("#period-time");
+			const comingDay = $("#coming-day");
+			const numOfPeople = $("#numOfPeople");
 			const inputArr = [name, phone, email, periodTime, comingDay, numOfPeople];
 			reservationForm.onsubmit = (event) => {
-				event.preventDefault();
 				isRequired(inputArr);
 				isPhoneNumber(phone);
-				cheerror_count(inputArr);
 				isEmail(email);
 				let error_count = 0;
-				const messages = document.querySelectorAll(".error-message");
+				const messages = $(".error-message");
 				for (const message of messages) {
 					if (message.innerHTML != "") error_count++;
 				}
@@ -224,16 +222,17 @@
 						text: "Cảm ơn bạn đã đặt bàn! Chúng tôi sẽ liên hệ lại với bạn !",
 						icon: "success",
 						button: false,
-						timer:1500
+						timer: 1500,
 					});
 				}
 				if (error_count != 0) {
+					event.preventDefault();
 					swal({
 						title: "Oops !",
 						text: "Vui lòng kiểm tra lại thông tin đăng ký của bạn !",
 						icon: "error",
 						button: false,
-						timer:1500
+						timer: 1500,
 					});
 				}
 			};

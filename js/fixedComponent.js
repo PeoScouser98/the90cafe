@@ -3,8 +3,12 @@
  *       push fixed component into html document
  * ----------------------------------------------------------
  */
-const $ = document.querySelector.bind(document);
-const $$ = document.querySelectorAll.bind(document);
+// const $ = document.querySelector.bind(document);
+// const $$ = document.querySelectorAll.bind(document);
+const $ = function (selector) {
+	const selectors = document.querySelectorAll(selector);
+	return selectors.length == 1 ? selectors[0] : selectors;
+};
 const header = $("header");
 const footer = $("footer");
 header.innerHTML = /*html */ `<div

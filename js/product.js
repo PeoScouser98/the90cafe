@@ -1,4 +1,5 @@
 // sản phẩm
+
 const Coffee = [
 	{
 		imgSrc: "./img/Products/coffee/cold-brew.jpg",
@@ -177,7 +178,7 @@ dropdownMenu.addEventListener("mousedown", (event) => {
  * **********************************************
  */
 const productModal = $(".modal");
-const addToCart_hover = $$(".addToCart-hover");
+const addToCart_hover = $(".addToCart-hover");
 const quantity = $("#quantity");
 const addToCart_button = $("#addToCart-btn");
 // const successMessage = $(".success-message");
@@ -241,9 +242,9 @@ for (const item of addToCart_hover) {
 			productInCart.push({
 				id: index,
 				name: productName_modal.innerText,
-				price: modalPrice.innerText,
-				quantity: quantity.value,
-				totalPrice: totalAmount.innerText,
+				price: +modalPrice.innerText,
+				quantity: +quantity.value,
+				totalPrice: +totalAmount.innerText,
 			});
 			index++;
 			selectedQuantity.innerHTML = productInCart.length;

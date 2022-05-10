@@ -56,7 +56,7 @@ function removeProduct(index) {
 	productInCart.splice(productInCart.indexOf(deletedProduct), 1);
 	localStorage.setItem("productInCart", JSON.stringify(productInCart));
 	renderProduct(productInCart);
-	getTotalAmount();
+	// getTotalAmount();
 	if (totalAmount.innerText == 0) showEmpty();
 }
 
@@ -84,7 +84,7 @@ function getTotalAmount() {
 		(previousValue, currentValue) => {
 			return previousValue + currentValue.totalPrice;
 		},
-		0
+		0,
 	);
 }
 
