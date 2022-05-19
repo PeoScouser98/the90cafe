@@ -133,32 +133,36 @@ const Juices = [
 
 // RENDER PRODUCT TO HTML DOCUMENT
 const addProduct = (data, category) => {
+	const productContainer = $(".product-list");
+	productContainer.innerHTML += /*html */ `<div class="text-left">
+												<h2>${category.charAt(0).toUpperCase() + category.slice(1, category.length).toLowerCase()}</h2>
+												<div
+												class="grid sm:gap-4 md:gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3"
+												id=${category}
+												></div>
+											</div>`;
+	const productList = $(`#${category}`);
 	const products = data
 		.map((item) => {
 			return /*html */ `<div>
-				<div class="relative">
-					<img src=${item.imgSrc} alt="" />
-					<div class="addToCart-hover absolute z-10 top-0 left-0 w-full h-full">
-						<span
-							class="relative top-1/2 text-center -translate-y-1/2 text-white text-6xl font-bold">
-							<i class="bi bi-cart-plus"></i>
-						</span>
-					</div>
-				</div>
-				<!-- product name -->
-				<span
-					class="product-name text-left sm:text-base md:text-xl lg:text-2xl text-primary">
-					${item.productName}
-				</span>
-				<!-- price -->
-				<span>
-					<span class="price inline-block text-left">${item.price}</span>đ
-				</span>
-			</div>`;
+								<div class="relative">
+									<img src=${item.imgSrc} alt="" />
+									<div class="addToCart-hover absolute z-10 top-0 left-0 w-full h-full">
+										<span
+										class="relative top-1/2 text-center -translate-y-1/2 text-white text-6xl font-bold">
+										<i class="bi bi-cart-plus"></i>
+										</span>
+									</div>
+								</div>
+									<!-- product name -->
+									<span class="product-name text-left sm:text-base md:text-xl lg:text-2xl text-primary">${item.productName}</span>
+									<!-- price -->
+									<span><span class="price inline-block text-left">${item.price}</span>đ</span>
+								</div>`;
 		})
 		.join("");
-	const productList = $(`#${category}`);
 	productList.innerHTML = products;
+	console.log(data);
 };
 addProduct(Coffee, "coffee");
 addProduct(Tea, "tea");
@@ -206,20 +210,19 @@ for (const item of addToCart_hover) {
 		/**
 		 * push product name into modal
 		 *  */
-		const productName =
-			item.parentElement.parentElement.querySelector(".product-name");
+		const productName = item.parentElement.parentElement.querySelector(".product-name");
 		const productName_modal = productModal.querySelector(".product-name");
 		productName_modal.innerText = productName.innerText;
 		/**
 		 * push product's price into modal
 		 *  */
-		const productPrice =
-			item.parentElement.parentElement.querySelector(".price").innerText;
+		const productPrice = item.parentElement.parentElement.querySelector(".price").innerText;
 		const modalPrice = $(".unit-price");
 		modalPrice.innerText = +productPrice;
 		/**
 		 * calculate total price
 		 *  */
+		quantity.value = 1;
 		totalAmount.innerText = quantity.value * modalPrice.innerText;
 		quantity.oninput = () => {
 			totalAmount.innerText = quantity.value * modalPrice.innerText;
